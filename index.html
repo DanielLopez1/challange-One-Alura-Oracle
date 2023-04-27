@@ -14,23 +14,30 @@
     <main>
         <section class="text-container">
                 <div class="text">
-                    <textarea name="" id="" cols="30" rows="10"  
+                    <textarea name="" id="" cols="20" rows="10"  
                     placeholder="Ingresea el texto aqui" class="textarea-encriptar"></textarea>
-                    <div class="warning">
-                        <img src="img/Vector.png" alt="signo de admiración" srcset="">
-                        <p> Solo letras minúsculas y sin acentos</p>
-                    </div>
-                    <div class="button-text">
-                        <button class="button-encriptar">Encriptar</button>
-                        <button class="button-desencriptar">Desencriptar</button>
+                    <div class="content">
+                        <div class="warning">
+                            <img src="img/Vector.png" alt="signo de admiración" srcset="">
+                            <p> Solo letras minúsculas y sin acentos</p>
+                        </div>
+                        <div class="button-text">
+                            <button class="button-encriptar" >Encriptar</button>
+                            <button class="button-desencriptar">Desencriptar</button>
+                        </div>
                     </div>
                 </div>
                 <div class="result-text">
-                    <img src="/img/Muñeco.png" alt="imagen de una persona con una lupa" class="img-muneco"> 
-                    <textarea name="" id="" cols="30" rows="10"  
-                    placeholder="Ingresea el texto que desea encriptar o desencriptar" class="textarea-desencriptar"></textarea>
-                    <div class="button-result-text">
-                        <button class="button-copy">Copiar</button>
+                    <div class="content-img-muneco" id="content-disappear">
+                        <img src="/img/Muñeco.png" alt="imagen de una persona con una lupa" class="img-muneco"> 
+                        <h2 >Ningun mensaje fue encontrado</h2>
+                        <p> Ingresea el texto que desea encriptar o desencriptar</p>
+                    </div>
+                    <div class="result-content" id="content-button-disappear">
+                        <textarea name="result" id="result" cols="20" rows="10"  class="textarea-desencriptar"></textarea>
+                        <div class="button-result-text">
+                            <button class="button-copy" id="copy">Copiar</button>
+                        </div>
                     </div>
                 </div>
         </section>

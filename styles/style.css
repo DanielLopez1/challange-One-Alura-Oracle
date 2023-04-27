@@ -2,11 +2,10 @@
 * {
     padding: 0;
     margin: 0;
-}
-
-html{
     box-sizing: border-box;
 }
+
+
 
 body{
     /* background: #E5E5E5; */
@@ -27,37 +26,44 @@ header{
 }
 
 /*Contenido o Main*/
-main{
-    width: 100%;
-    
 
-}
 
 /*Contenedor de texto*/
 
 .text-container{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
-    height: 800px;
+    height: 800px; */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    max-width: 100%;
+    height: fit-content;
+    
     
 }
-
 .text{
     display: flex;
     flex-direction: column;
-    /* border: 1px solid black;
-    border-radius: 32px; */
-    width: 800px;
-    height: 774px;
+    justify-content: space-between;
+    max-width: 100%;
     margin: 10px 0 0 40px;
     background-color: #f3f5fc;
+    /* border: 1px solid black;
+    border-radius: 32px; */
+    /* height: 774px; */
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
 }
 
 .textarea-encriptar{
-    margin: 10px 10px 60px 10px;
-    height: 500px;
+    margin: 0 0 60px 0;
+    width: 100%;
+    height: 80%;
     color: #0A3871;
     font-size: 22px;
     border: none;
@@ -83,12 +89,10 @@ main{
     margin-right: 10px;
 }
 .button-text{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-around;
-    width: 100%;
-    height: 67px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    
 }
 
 .button-encriptar{
@@ -96,7 +100,7 @@ main{
     border: 1px solid #0a3871;
     border-radius: 24px;
     color: white;
-    width: 328px;
+    max-width: 100%;
     height: 67px;
     padding: 24px;
     gap: 8px;
@@ -108,7 +112,7 @@ main{
     border: 1px solid #0a3871;
     border-radius: 24px;
     color: #0a3871;
-    width: 328px;
+    max-width: 100%;
     height: 67px;
     padding: 24px;
     gap: 8px;
@@ -120,28 +124,41 @@ main{
 .result-text{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    border: 1px solid black;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
     border-radius: 32px;
-    width: 400px;
-    height: 774px;
-    margin: 10px;
+    max-width: 400px;
+    /* height: 774px; */
+    margin: 0 0 0 80px ;
     background-color: white;
+}
+
+#content-disappear{
+    display: none;
+}
+#content-button-disappear{
+    display: block;
 }
 .img-muneco{
     width: 336px;
     height: 304px;
-    
 }
-
+.result-content{
+    max-width: 100%;
+}
 
 .textarea-desencriptar{
     margin: 10px;
-    height: 500px;
+    width: 100%;
+    height: 80%;
     color: #0A3871;
     font-size: 22px;
+    text-align: center;
     border: none;
+    border-radius: 32px;
     resize: none;
+
 }
 
 .textarea-desencriptar:focus{
@@ -149,14 +166,16 @@ main{
 }
 
 .button-result-text{
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    height: 67px;
+    height: 67px; */
+    display: inline;
+    gap: 24px;
 }
 .button-copy{
-    background: #D8DFE8;
+    background: white;
     border: 1px solid #0a3871;
     border-radius: 24px;
     color: #0a3871;
@@ -173,10 +192,72 @@ main{
 
 /*Pie de pagina*/
 footer{
+    display: block;
     text-align: center;
     margin: 40px auto; 
+    max-width: 100%;
 }
 
 .copyright{
     color: #0a3871;
 }
+
+@media screen and (max-width: 1000px) {
+    .text-container{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        margin: 0 30px;
+        padding: 0 40px;
+    }
+
+    .text{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        margin: 0 30px;
+        max-width: 100%;
+    }
+
+    .result-text{
+        display: flex;
+        flex-direction: column;
+        margin: 60px 0 40px 0;
+        max-width: 100%;
+        height: fit-content;
+    }
+
+    .img-muneco{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .text{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        margin: 0 30px;
+        max-width: 100%;
+    }
+
+    .result-text{
+        display: flex;
+        flex-direction: column;
+        margin: 60px 0 40px 0;
+        max-width: 100%;
+        height: fit-content;
+    }
+    .button-text{
+        display: grid;
+        gap: 24px;
+        grid-template-columns: none;
+        grid-template-rows: auto;
+    }
+
+    .result-text{
+        margin: 64px 0 40px 0;
+    }
+}
+
