@@ -9,19 +9,34 @@
 </head>
 <body>
     <header>
-        <div class="container-logo">
-            <img src="/img/Logo.png" alt="" class="logo">
-        </div>
+                <img src="/img/Logo.png" alt="" class="logo">
     </header>
     <main>
-        <div class="conteiner-text">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
-            <button>Haz click</button>
-        </div>
-        <section></section>
+        <section class="text-container">
+                <div class="text">
+                    <textarea name="" id="" cols="30" rows="10"  
+                    placeholder="Ingresea el texto aqui" class="textarea-encriptar"></textarea>
+                    <div class="warning">
+                        <img src="img/Vector.png" alt="signo de admiración" srcset="">
+                        <p> Solo letras minúsculas y sin acentos</p>
+                    </div>
+                    <div class="button-text">
+                        <button class="button-encriptar">Encriptar</button>
+                        <button class="button-desencriptar">Desencriptar</button>
+                    </div>
+                </div>
+                <div class="result-text">
+                    <img src="/img/Muñeco.png" alt="imagen de una persona con una lupa" class="img-muneco"> 
+                    <textarea name="" id="" cols="30" rows="10"  
+                    placeholder="Ingresea el texto que desea encriptar o desencriptar" class="textarea-desencriptar"></textarea>
+                    <div class="button-result-text">
+                        <button class="button-copy">Copiar</button>
+                    </div>
+                </div>
+        </section>
     </main>
     <footer>
-
+        <p class="copyright">&copy Copyright Daniel López - 2023</p>
     </footer>
     <script src="/js/main.js">
 
