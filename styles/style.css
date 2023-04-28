@@ -249,13 +249,22 @@ footer{
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
+    main{
+        margin: 0;
+    }
+    
     .text{
         display: flex;
         flex-direction: column;
         height: fit-content;
         margin: 0 30px;
         max-width: 100%;
+    }
+
+    .warning img {
+        width: 24px;
+        height: 24px;
     }
 
     .result-text{
