@@ -1,7 +1,49 @@
+function encritparTexto(){
+    let texto = document.getElementById("text").value;
+    //Validacion por expresiones regulares 
+    // para mas info checa la lista en https://regexr.com/
+    const caracteresValidos = /^[a-zñ\s\¿\?\¡\!\,\.]+$/;
+    
+    if(caracteresValidos.test(texto)){ 
+        let textoEncriptado = encriptacion(texto);
+        document.getElementById("result").innerHTML = textoEncriptado;
+        document.getElementById("text").value = "";
+    }else{
+        alert("Tu texto no es valido, escribelo en minusculas y sin acentos.")
+    }
+}
+
+function desencriptarTexto(){
+    let texto = document.getElementById("text").value;
+    //Validacion por expresiones regulares 
+    // para mas info checa la lista en https://regexr.com/
+    const caracteresValidos = /^[a-zñ\s\¿\?\¡\!\,\.]+$/;
+    
+    if(caracteresValidos.test(texto)){ 
+        let textoDesencriptado = desencriptado(texto);
+        document.getElementById("result").innerHTML = textoDesencriptado;
+        document.getElementById("text").value = "";
+    }else{
+        alert("Tu texto no es valido, escribelo en minusculas y sin acentos.")
+    }
+}
+
+function copiarTexto(){
+
+    let textoCopiar = document.getElementById("result"); //se obtine el id del elemento
+    textoCopiar.select(); //selecciona todo el texto en un elemento
+    document.execCommand("copy"); //usamos el metodo copiar 
+    window.getSelection().removeAllRanges(); //se deselecciona el elemento
+}
+
+function desapareser(){
+    document.getElementById("content-disappear").style.display = "none";
+    document.getElementById("copy").style.display = "block";
+}
+
 function encriptacion(texto){
     let textoEncriptado = [];
     let textoSeparado = texto.split("");
-    console.log(textoSeparado);
             for(let i = 0; i < textoSeparado.length; i++){
                 let letra = textoSeparado[i];
                 if(letra == "o"){
@@ -20,44 +62,24 @@ function encriptacion(texto){
             }    
 
             textoEncriptado = textoEncriptado.join("");
-            console.log(textoEncriptado);
+            // console.log(textoEncriptado);
+            desapareser();
+            return textoEncriptado;
 }
 
-encriptacion("hola como estas");
 
-// function desencriptado (texo){
-//     let palabraClave = [];
-//     let textoDesencriptado = [];
-//     let textoEncriptado = texo.split("");
-//         for(let i = 0; i < textoEncriptado.length; i++){
-//             let letra = textoEncriptado[i];
-//             if(letra == "o"){
-//                 palabraClave.push(letra);
-//             }else if(letra == "a"){
-//                 palabraClave.push(letra);
-//             }else if(letra == "e"){
-//                 palabraClave.push(letra);
-//             }else if(letra == "i"){
-//                 palabraClave.push(letra);
-//             }else if(letra == "u"){
-//                 palabraClave.push(letra);
-//             }else{
-//                 textoEncriptado.push(letra);
-//             }
-//         }    
-
-// }
 function desencriptado (texo){
     let textoSinOber = texo.replaceAll("ober", "o");
     let textoSinAi = textoSinOber.replaceAll("ai", "a");
     let textoSinEnter = textoSinAi.replaceAll("enter", "e");
     let textoSinImes = textoSinEnter.replaceAll("imes", "i");
     let textoDesencriptado = textoSinImes.replaceAll("ufat", "u");
-
-    console.log(textoDesencriptado);
+    desapareser();
+    return textoDesencriptado;
+    // console.log(textoDesencriptado);
 
 }
 
 
 
-desencriptado("fenterlimescimesdaidenters poberr enternfrenterntair enterstenter dentersaifimesober y haibenterrlober cobernclufatimesdober cobern enterximestober!");
+

@@ -14,16 +14,15 @@
     <main>
         <section class="text-container">
                 <div class="text">
-                    <textarea name="" id="" cols="20" rows="10"  
-                    placeholder="Ingresea el texto aqui" class="textarea-encriptar"></textarea>
+                    <textarea  id="text" cols="20" rows="10" placeholder="Ingresea el texto aqui" class="textarea-encriptar"></textarea>
                     <div class="content">
                         <div class="warning">
                             <img src="img/Vector.png" alt="signo de admiración" srcset="">
                             <p> Solo letras minúsculas y sin acentos</p>
                         </div>
                         <div class="button-text">
-                            <button class="button-encriptar" >Encriptar</button>
-                            <button class="button-desencriptar">Desencriptar</button>
+                            <button class="button-encriptar" onclick="encritparTexto()" >Encriptar</button>
+                            <button class="button-desencriptar" onclick="desencriptarTexto()">Desencriptar</button>
                         </div>
                     </div>
                 </div>
@@ -36,7 +35,7 @@
                     <div class="result-content" id="content-button-disappear">
                         <textarea name="result" id="result" cols="20" rows="10"  class="textarea-desencriptar"></textarea>
                         <div class="button-result-text">
-                            <button class="button-copy" id="copy">Copiar</button>
+                            <button class="button-copy" id="copy" onclick="copiarTexto()">Copiar</button>
                         </div>
                     </div>
                 </div>
