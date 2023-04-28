@@ -38,7 +38,7 @@ function copiarTexto(){
 
 function desapareser(){
     document.getElementById("content-disappear").style.display = "none";
-    document.getElementById("copy").style.display = "block";
+    document.getElementById("content-button-disappear").style.display = "block";
 }
 
 function encriptacion(texto){
